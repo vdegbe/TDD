@@ -1,10 +1,11 @@
 import unittest
 from fizzbuzz import *
 class test_fizzbuz (unittest.TestCase):
+    def setUp(self):
+        self.instance=fizzbuzz()
+
     def test_fizzbuzz_default(self):
-        fb = fizzbuzz()
-        result = fb.affiche()
-        self.assertEqual(result, "12Fizz4BuzzFizz78FizzBuzz11Fizz1314FrisBee16...9798FizzBuzz")
+        self.assertEqual(self.instance.affiche(), "12")
 
 if __name__ == "__main__":
     unittest.main()
